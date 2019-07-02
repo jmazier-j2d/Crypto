@@ -16,7 +16,20 @@ class CryptoProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Nothing here
+                /*
+        |--------------------------------------------------------------------------
+        | Blade Directives
+        |--------------------------------------------------------------------------
+        */
+
+        // Crypto
+        Blade::directive('crypto_encrypt', function ($expression) {
+            return "<?php echo Crypto::encrypt($expression); ?>";
+        });
+
+        Blade::directive('crypto_decrypt', function ($expression) {
+            return "<?php echo Crypto::encrypt($expression); ?>";
+        });
     }
 
     /**
@@ -43,20 +56,6 @@ class CryptoProvider extends ServiceProvider
             class_alias(\Grafite\Crypto\Services\Crypto::class, 'Crypto');
         }
 
-        /*
-        |--------------------------------------------------------------------------
-        | Blade Directives
-        |--------------------------------------------------------------------------
-        */
-
-        // Crypto
-        Blade::directive('crypto_encrypt', function ($expression) {
-            return "<?php echo Crypto::encrypt($expression); ?>";
-        });
-
-        Blade::directive('crypto_decrypt', function ($expression) {
-            return "<?php echo Crypto::encrypt($expression); ?>";
-        });
 
         /*
         |--------------------------------------------------------------------------
