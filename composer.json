@@ -1,5 +1,5 @@
 {
-    "name": "grafite/crypto",
+    "name": "grafite-fork-laravel-5-8/crypto",
     "description": "Cryptography tools for Laravel and Lumen",
     "license": "MIT",
     "authors": [
